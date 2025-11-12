@@ -2,20 +2,20 @@
 
 A comprehensive C implementation for calculating the time-dependent J-integral in viscoelastic materials using contour integration methods.
 
-## 🎯 Overview
+##  Overview
 
 This project implements a **time-dependent J-integral** for viscoelastic materials, providing a robust framework for fracture mechanics analysis in materials that exhibit significant time-dependent behavior such as asphalt concrete, polymers, and biological tissues.
 
 ### Key Features
 
-- **🧮 Generalized Maxwell Viscoelastic Model**: Full Prony series implementation with recursive stress updating
-- **🔄 Memory-Efficient Algorithm**: Avoids storing complete strain history using exponential decay recursion
-- **🛣️ Path Independence Validation**: Numerical verification across multiple contour paths
-- **⏱️ Time-Dependent Evolution**: Complete simulation framework for field evolution
-- **📊 Multiple Test Scenarios**: Relaxation tests, load history application, and evolution analysis
-- **🎯 High Performance**: Optimized C implementation for computational efficiency
+- ** Generalized Maxwell Viscoelastic Model**: Full Prony series implementation with recursive stress updating
+- ** Memory-Efficient Algorithm**: Avoids storing complete strain history using exponential decay recursion
+- ** Path Independence Validation**: Numerical verification across multiple contour paths
+- ** Time-Dependent Evolution**: Complete simulation framework for field evolution
+- ** Multiple Test Scenarios**: Relaxation tests, load history application, and evolution analysis
+- ** High Performance**: Optimized C implementation for computational efficiency
 
-## 📐 Theoretical Background
+##  Theoretical Background
 
 ### J-Integral Formulation
 
@@ -49,7 +49,7 @@ For computational efficiency, stress updates use:
 σᵢⱼᵏ(t+Δt) = exp(-Δt/τₖ) σᵢⱼᵏ(t) + Gₖ[1-exp(-Δt/τₖ)] Δεᵢⱼ
 ```
 
-## 🏗️ Project Structure
+##  Project Structure
 
 ```
 viscoelastic_j_integral/
@@ -66,7 +66,7 @@ viscoelastic_j_integral/
 └── README.md                     # This documentation
 ```
 
-## 🚀 Quick Start
+##  Quick Start
 
 ### Prerequisites
 
@@ -111,7 +111,7 @@ make demo4    # Relaxation test
 make demo5    # Load history
 ```
 
-## 📋 Demonstration Scenarios
+##  Demonstration Scenarios
 
 ### 1. Basic J-Integral Calculation
 - **Purpose**: Validate implementation against analytical solutions
@@ -138,7 +138,7 @@ make demo5    # Load history
 - **Features**: Step loading, complex load histories
 - **Output**: `demo5_load_history.dat`
 
-## 📊 Output Files
+##  Output Files
 
 ### Data Files (.dat)
 - **Format**: Space-separated columns with headers
@@ -149,7 +149,7 @@ make demo5    # Load history
 - **Content**: Simulation parameters, model details, summary statistics
 - **Usage**: Documentation and result verification
 
-## 🧪 Advanced Usage
+##  Advanced Usage
 
 ### Custom Material Models
 
@@ -189,7 +189,7 @@ load_fields_from_file(&contour, "fe_results.dat");
 load_contour_from_file(&contour, "contour_nodes.dat");
 ```
 
-## 🔧 Build Options
+##  Build Options
 
 ```bash
 # Standard build
@@ -217,14 +217,14 @@ make distclean
 sudo make install
 ```
 
-## 📈 Performance Considerations
+##  Performance Considerations
 
 - **Memory Usage**: O(N×K) where N = nodes, K = Prony terms
 - **Computational Complexity**: O(N×K×T) for T time steps
 - **Optimization**: Compiled with `-O2` for production builds
 - **Parallel Processing**: Single-threaded (suitable for OpenMP extension)
 
-## 🧮 Mathematical Validation
+##  Mathematical Validation
 
 ### Theoretical Benchmarks
 - **Mode I Crack**: J = K₁²(1-ν²)/E for plane strain
@@ -236,7 +236,7 @@ sudo make install
 - **Time Stepping**: Adaptive time stepping available
 - **Convergence**: Automatic validation checks
 
-## 📚 References
+##  References
 
 1. **Rice, J.R.** (1968). A path independent integral and the approximate analysis of strain concentration by notches and cracks. *Journal of Applied Mechanics*, 35(2), 379-386.
 
@@ -246,7 +246,7 @@ sudo make install
 
 4. **Anderson, T.L.** (2017). *Fracture Mechanics: Fundamentals and Applications*. CRC Press.
 
-## 🤝 Contributing
+##  Contributing
 
 This implementation provides a solid foundation for research and development in viscoelastic fracture mechanics. Potential extensions include:
 
@@ -256,18 +256,18 @@ This implementation provides a solid foundation for research and development in 
 - **GUI Interface**: Graphical user interface for parameter input
 - **FE Integration**: Direct coupling with finite element codes
 
-## 📄 License
+##  License
 
 This project is provided for educational and research purposes. Please cite appropriately in academic work.
 
-## 🐛 Known Limitations
+##  Known Limitations
 
 - **2D Only**: Current implementation limited to plane strain/stress
 - **Small Strains**: Assumes small deformation theory
 - **Simplified Loading**: Basic strain increment application
 - **No Crack Growth**: Static crack configuration
 
-## 💡 Tips for Users
+##  Tips for Users
 
 1. **Start Simple**: Begin with Demo 1 to verify installation
 2. **Check Path Independence**: Always validate with Demo 2
